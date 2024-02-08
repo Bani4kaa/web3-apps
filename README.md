@@ -1,0 +1,1 @@
+These are all my web3 apps most of them require api keys to certian things so read carefully or the programs might not work I don't have any type of license and you don't need to mention me in any use of the code :)
