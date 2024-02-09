@@ -13,7 +13,7 @@ RED = '\033[91m'
 RESET = '\033[0m'
 
 try:
-    with open('memonics.txt', 'r') as file:
+    with open('mnemonics.txt', 'r') as file, open('wallets.txt', 'a') as output_file:
         for line in file:
             mnemonic = line.strip()
 
@@ -31,6 +31,11 @@ try:
 
                 print(GREEN + "Ethereum Address:", address)
                 print("Balance:", balance_eth, "ETH" + RESET)
+
+                output_file.write(f"Ethereum Address: {address}\n")
+                output_file.write(f"Balance: {balance_eth} ETH\n")
+                output_file.write(f"Mnemonic: {mnemonic}\n")
+                output_file.write(f"Private Key: {private_key}\n\n")
 
                 if balance_eth > 0:
                     print("Found an Ethereum address with balance above 0. Stopping the program.")
