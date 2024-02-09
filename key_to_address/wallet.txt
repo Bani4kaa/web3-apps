@@ -1,0 +1,4 @@
+Ethereum Address: 0xaA0Fc533AAf1BBD643Fc2725dE697c05720F83Be
+Balance: 0.0 ETH
+Mnemonic: matter afraid ensure funny name master hurt agree flat pencil file knock wrap winner enable music vital fury figure just like achieve genre such
+Private Key: 0x1740b3ff44405df5fd5398ec87d1bc829a594f2f701fc967daf9a3c069745a2a
