@@ -4,7 +4,7 @@ import time
 def generate_random_pairs(keywords):
     random.shuffle(keywords)
     if len(keywords) % 2 != 0:
-        keywords.pop()
+        keywords.pop()  # Remove the last element if it's odd
     pairs = [(keywords[i], keywords[i+1]) for i in range(0, len(keywords), 2)]
     return pairs
 
@@ -221,12 +221,13 @@ while True:
     random_pairs = generate_random_pairs(keywords)
 
     with open("mnemonics.txt", "a") as mnemonics_file, open("used.txt", "a+") as used_file:
-        for i in range(0, len(random_pairs), 12):
-            line_pairs = random_pairs[i:i+12]
+        for i in range(0, len(random_pairs), 6):
+            line_pairs = random_pairs[i:i+6]  # Adjusted to 6
             line = ' '.join([f"{pair[0]} {pair[1]}" for pair in line_pairs])
             if line + '\n' not in used_file:
                 mnemonics_file.write(line + '\n')
                 used_file.write(line + '\n')
 
+
     print("Pairs generated and appended to mnemonics.txt and used.txt")
-    time.sleep(1)
+    time.sleep(1)  # Add a delay to control the rate of generation
